@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "retweets",
+  "info": {
+    "name": "Retweet",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "counter": {
+      "type": "integer"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "post": {
+      "via": "retweets",
+      "model": "posts"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post": {
+      "via": "comments",
+      "model": "posts"
+    },
+    "description": {
+      "type": "string"
+    },
+    "profile": {
+      "model": "profile"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "parent": {
+      "model": "comments"
+    },
+    "children": {
+      "collection": "comments"
+    }
+  }
+}

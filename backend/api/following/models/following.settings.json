@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followings",
+  "info": {
+    "name": "following",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "counter": {
+      "type": "integer"
+    },
+    "profile": {
+      "model": "profile"
+    },
+    "mainid": {
+      "via": "followings",
+      "model": "profile"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "profile": {
+      "via": "posts",
+      "model": "profile"
+    },
+    "image": {
+      "type": "string"
+    },
+    "comments": {
+      "via": "post",
+      "collection": "comments"
+    },
+    "likes": {
+      "via": "post",
+      "collection": "likes"
+    },
+    "retweets": {
+      "collection": "retweet",
+      "via": "post"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "Profile",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "avatar": {
+      "type": "string"
+    },
+    "banner": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "posts": {
+      "via": "profile",
+      "collection": "posts"
+    },
+    "followings": {
+      "collection": "following",
+      "via": "mainid"
+    },
+    "followers": {
+      "via": "mainid",
+      "collection": "followers"
+    }
+  }
+}
